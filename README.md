@@ -37,7 +37,7 @@ Her satır kod, her fikir bana ait. Gelişmeye, üretmeye ve paylaşmaya devam!
 
 ## 📫 Bana Ulaş
 
-- 🌐 [İNSTAGRAM ]:( @bytrix.dev)
+- 🌐 [İNSTAGRAM ]:( [@bytrix.dev](https://www.instagram.com/bytrix.dev/))
 - 📧 [Mail Gönder](burakaydin0440@gmail.com)
 
 
