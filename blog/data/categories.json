@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "PHP",
+        "slug": "php"
+    },
+    {
+        "id": 2,
+        "name": "JavaScript",
+        "slug": "javascript"
+    },
+    {
+        "id": 3,
+        "name": "Python",
+        "slug": "python"
+    },
+    {
+        "id": 4,
+        "name": "Web Tasarım",
+        "slug": "web-tasarim"
+    },
+    {
+        "id": 5,
+        "name": "Veritabanı",
+        "slug": "veritabani"
+    }
+]

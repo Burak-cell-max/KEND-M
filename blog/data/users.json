@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "username": "kreatixcode",
+        "email": "burakaydin0440@gmail.com",
+        "password": "$2y$10$7eQGNhl.ADID8esBBUAGU.zztbdRRYP77LcpUo.\/gNcH.CtSXjTDy",
+        "created_at": "2025-10-26 18:13:45",
+        "public_profile": "private",
+        "reset_token": "1f420a7e85730c7239bb3f1ce45cbf19",
+        "reset_expires": 1761583432
+    },
+    {
+        "id": 2,
+        "username": "burakaydin0440",
+        "email": "burakaydin2010@hotmail.com",
+        "password": "$2y$10$n\/x\/YzezIjuKyUfyQOMc0uFu9tU1c6hQpOYUTdWfEDv0mo.vM2eiq",
+        "created_at": "2025-10-27 15:37:41",
+        "public_profile": "private",
+        "email_notifications": "all"
+    }
+]
