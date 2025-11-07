@@ -1,7 +1,7 @@
 <?php
 // Ensure a session is available for pages that include this header
 if (session_status() === PHP_SESSION_NONE) {
-  @session_start();
+  session_start();
 }
 ?>
 <!DOCTYPE html>
@@ -14,16 +14,6 @@ if (session_status() === PHP_SESSION_NONE) {
   <script src="/blog/assets/script.js" defer></script>
 </head>
 <body>
-  <?php
-  // TEMP DEBUG: append request and session info to data/debug.log (remove when fixed)
-  try {
-    $dbgPath = __DIR__ . "/../data/debug.log";
-    $entry = date('Y-m-d H:i:s') . " | script=" . (isset($_SERVER['SCRIPT_NAME']) ? basename($_SERVER['SCRIPT_NAME']) : '') . " | sess=" . json_encode($_SESSION) . " | POST=" . json_encode($_POST) . "\n";
-    @file_put_contents($dbgPath, $entry, FILE_APPEND | LOCK_EX);
-  } catch (Exception $e) {
-    // ignore
-  }
-  ?>
   <header>
     <div class="header-top">
       <div class="search-top">
@@ -42,16 +32,20 @@ if (session_status() === PHP_SESSION_NONE) {
       <div class="auth-buttons">
         <?php if (!empty($is_admin)): ?>
           <a href="/blog/admin/dashboard.php" class="btn">Admin</a>
-          <a href="/blog/admin/logout.php" class="btn" style="margin-left:8px;">Çıkış</a>
-        <?php elseif (!empty($_SESSION["user_logged_in"]) || !empty($_SESSION["logged_in"])): ?>
+          <a href="/blog/admin/logout.php" class="btn">Çıkış</a>
+        <?php elseif (!empty($_SESSION["user_logged_in"])): ?>
           <div class="account-wrapper">
             <button class="btn btn-outline account-btn" id="accountBtn">HESABIM ▾</button>
             <div class="account-dropdown" id="accountDropdown" aria-hidden="true">
               <div class="account-card">
                 <?php if (!empty($_SESSION['user_avatar'])): ?>
-                  <div class="account-avatar"><img src="/blog/uploads/images/avatars/<?php echo htmlspecialchars($_SESSION['user_avatar']); ?>" alt="avatar"></div>
+                  <div class="account-avatar">
+                    <img src="/blog/uploads/images/avatars/<?php echo htmlspecialchars($_SESSION['user_avatar']); ?>" alt="avatar">
+                  </div>
                 <?php else: ?>
-                  <div class="account-avatar"><?php echo strtoupper(substr(htmlspecialchars($_SESSION["username"]),0,1)); ?></div>
+                  <div class="account-avatar">
+                    <?php echo strtoupper(substr(htmlspecialchars($_SESSION["username"]), 0, 1)); ?>
+                  </div>
                 <?php endif; ?>
                 <div class="account-info">
                   <strong><?php echo htmlspecialchars($_SESSION["username"]); ?></strong>
@@ -59,7 +53,6 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
               </div>
               <ul class="account-actions">
-                <!-- Keep one central entry and make the others go to distinct account sections -->
                 <li><a href="/blog/user/account.php#center">Hesap Merkezi</a></li>
                 <li><a href="/blog/user/account.php#profile">Profilim</a></li>
                 <li><a href="/blog/user/account.php#settings">Hesap Ayarları</a></li>
