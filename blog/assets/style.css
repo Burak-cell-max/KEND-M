@@ -355,6 +355,8 @@ nav a {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .latest-posts {
@@ -697,3 +699,4 @@ nav a {
   border: 1px solid #ff0000;
   color: #ff0000;
 }
+.auth-buttons .btn + .btn { margin-left: 8px; }
